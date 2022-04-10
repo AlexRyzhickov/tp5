@@ -24,7 +24,9 @@
 
 #include "APC_VecMat3D.h"
 
-
+Mat3D R_x(double RotAngle);
+Mat3D R_y(double RotAngle);
+Mat3D R_z(double RotAngle);
 //------------------------------------------------------------------------------
 //
 // SunPos: Computes the Sun's ecliptical position using analytical series

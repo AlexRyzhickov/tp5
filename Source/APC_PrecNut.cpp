@@ -23,7 +23,6 @@
 #include "APC_PrecNut.h"
 #include "APC_VecMat3D.h"
 
-
 //------------------------------------------------------------------------------
 //
 // PrecMatrix_Ecl: Precession of ecliptic coordinates

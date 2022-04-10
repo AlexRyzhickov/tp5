@@ -379,13 +379,14 @@ Mat3D Id3D()
 //
 // Elementary rotation matrices
 //
+
 Mat3D R_x(double RotAngle)
 {
   const double S = sin (RotAngle);
   const double C = cos (RotAngle);
 
   Mat3D U;
-  
+
   U.m_Mat[0][0] = 1.0;  U.m_Mat[0][1] = 0.0;  U.m_Mat[0][2] = 0.0;
   U.m_Mat[1][0] = 0.0;  U.m_Mat[1][1] =  +C;  U.m_Mat[1][2] =  +S;
   U.m_Mat[2][0] = 0.0;  U.m_Mat[2][1] =  -S;  U.m_Mat[2][2] =  +C;
@@ -400,7 +401,7 @@ Mat3D R_y(double RotAngle)
   const double C = cos (RotAngle);
 
   Mat3D U;
-  
+
   U.m_Mat[0][0] =  +C;  U.m_Mat[0][1] = 0.0;  U.m_Mat[0][2] =  -S;
   U.m_Mat[1][0] = 0.0;  U.m_Mat[1][1] = 1.0;  U.m_Mat[1][2] = 0.0;
   U.m_Mat[2][0] =  +S;  U.m_Mat[2][1] = 0.0;  U.m_Mat[2][2] =  +C;

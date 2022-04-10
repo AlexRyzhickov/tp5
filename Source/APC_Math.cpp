@@ -343,13 +343,13 @@ ostream& operator << (ostream& os, const Angle& alpha)
   p  = os.precision();             // precision (digits)
   sp = flags & ios::showpos;       // flag for positive sign
 
-  os << noshowpos << right;
+  os  ;
 
   switch (alpha.m_Format) {
 
     case Dd:      // decimal output
 
-      os << fixed;
+      os ;
       os << alpha.m_angle;
       
       break;
@@ -384,7 +384,7 @@ ostream& operator << (ostream& os, const Angle& alpha)
         os << setw(1) << "+" << setw(w-5-p);
       else
         os << setw(w-4-p);
-      os << D << " "  << setfill('0') << fixed 
+      os << D << " "  << setfill('0')  
          << setw(3+p) << M+S/60.0 << setfill(' ');   
 
       break;
@@ -421,12 +421,12 @@ ostream& operator << (ostream& os, const Angle& alpha)
       else
         os << setw(w-7-p);
       os << D << " "  << setfill('0') << setw(2) << M << " "
-         << fixed << setw(3+p) << S << setfill(' ');
+          << setw(3+p) << S << setfill(' ');
 
       break;
   }
    
-  os.setf(flags); // restore output stream format flags
+  //os.setf(flags); // restore output stream format flags
 
   return os;
 }

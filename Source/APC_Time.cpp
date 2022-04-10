@@ -275,13 +275,13 @@ ostream& operator << (ostream& os, const Time& time)
   int    H,M;
 
 
-  os << right;
+  os ;
 
   switch ( time.m_Format ) {
 
     case HHh:
 
-      os << fixed << setprecision(1);
+      os  << setprecision(1);
       os << setw(4) << time.m_Hour;
       
       break;
@@ -349,7 +349,7 @@ ostream& operator << (ostream& os, const DateTime& DT)
   int    H, M;
 
 
-  os << right;
+  os ;
 
   switch ( DT.m_Format ) {
 
@@ -372,7 +372,7 @@ ostream& operator << (ostream& os, const DateTime& DT)
       os.fill('0');
       os << setw(4) << Year  << "/" 
          << setw(2) << Month << "/" 
-         << fixed << setw(3+os.precision()) << Day+Hours/24.0; 
+          << setw(3+os.precision()) << Day+Hours/24.0; 
       os.fill(' ');
       
       break;
@@ -389,7 +389,7 @@ ostream& operator << (ostream& os, const DateTime& DT)
          << setw(2) << Month << "/" 
          << setw(2) << Day   << " "; 
 
-      os << fixed << setprecision(1);
+      os  << setprecision(1);
       os << setw(4) << Hours;
       os.fill(' ');
       

@@ -34,7 +34,6 @@
 
 using namespace std;
 
-
 //
 // Types
 //
@@ -245,27 +244,27 @@ void Position::Print()
   cout << (( m_RefSys==Equator )?  "equatorial " : "ecliptic ");
   cout << "coordinates" << endl;
 
-  cout << "(Equinox J" << fixed << setprecision(1) 
+  cout << "(Equinox J" << setprecision(1) 
        << 2000.0+m_TEquinox*100.0 << ",  ";
   
   cout << "Epoch " << DateTime(m_MjdEpoch,HHh) << ")" << endl;
   cout << endl;
 
-  cout << "  (x,y,z) = " << fixed << setprecision(8) << setw(12) << m_R << endl;
+  cout << "  (x,y,z) = " << setprecision(8) << setw(12) << m_R << endl;
 
   if ( m_RefSys==Equator ) {
     cout << "         h  m  s               o  '  \"" << endl;
     cout << "  RA = " << setprecision(2) << setw(11)
          << Angle(Deg*m_R[phi]/15.0,DMMSSs);
-    cout << "    Dec = " << setprecision(1) << showpos << setw(11) 
-         << Angle(Deg*m_R[theta],DMMSSs) << noshowpos;
+    cout << "    Dec = " << setprecision(1) << setw(11) 
+         << Angle(Deg*m_R[theta],DMMSSs);
   }
   else {
     cout << "         o  '  \"             o  '  \"" << endl;
     cout << "  L = " << setprecision(2) << setw(12)
          << Angle(Deg*m_R[phi],DMMSSs);
-    cout << "    B = " << setprecision(1) << showpos << setw(11) 
-         << Angle(Deg*m_R[theta],DMMSSs) << noshowpos;
+    cout << "    B = " << setw(11) 
+         << Angle(Deg*m_R[theta],DMMSSs);
   }
   cout << "    R = " << setprecision(8) << setw(12) 
        << m_R[r] << endl;
@@ -278,7 +277,7 @@ void Position::Print()
 // Main program
 //
 //------------------------------------------------------------------------------
-void main() {
+int main() {
 
   //
   // Variables
@@ -352,4 +351,6 @@ void main() {
   while (!End);
 
   cout << endl;
+  
+  return 0;
 }

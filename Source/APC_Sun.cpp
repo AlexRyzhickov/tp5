@@ -312,6 +312,7 @@ Vec3D SunEqu ( double T )
 //   Dec       Declination of the Sun in [rad]
 //
 //------------------------------------------------------------------------------
+
 void MiniSun (double T, double& RA, double& Dec)
 {
   //

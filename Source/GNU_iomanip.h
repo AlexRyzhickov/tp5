@@ -4,7 +4,7 @@
 //
 // Purpose:    
 //
-//    Temporaray implementation of ostream manipulators from the 
+//    Temporaray implementation of std::ostream manipulators from the 
 //    C++ Standard Library, which are not contained in <iomanip> 
 //    as provided with GNU C++.
 //
@@ -24,9 +24,9 @@
 #include <iostream>
 
 namespace{
-ostream& left (ostream& os){os.setf(ios::left ,ios::adjustfield); return os;};
-ostream& right(ostream& os){os.setf(ios::right,ios::adjustfield); return os;};
-ostream& fixed(ostream& os){os.setf(ios::fixed,ios::floatfield);  return os;};
-ostream& showpos  (ostream& os){os.setf(ios::showpos); return os;};
-ostream& noshowpos(ostream& os){os.unsetf(ios::showpos); return os;};
+std::ostream& left (std::ostream& os){os.setf(std::ios::left ,std::ios::adjustfield); return os;};
+std::ostream& right(std::ostream& os){os.setf(std::ios::right,std::ios::adjustfield); return os;};
+std::ostream& fixed(std::ostream& os){os.setf(std::ios::fixed,std::ios::floatfield);  return os;};
+std::ostream& showpos  (std::ostream& os){os.setf(std::ios::showpos); return os;};
+std::ostream& noshowpos(std::ostream& os){os.unsetf(std::ios::showpos); return os;};
 }
